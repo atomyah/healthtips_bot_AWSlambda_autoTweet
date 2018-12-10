@@ -1,0 +1,17 @@
+{
+  "name": "healthtipsbot_awslambda",
+  "version": "1.0.0",
+  "description": "This Lambda function will create a job to tweet healthtips",
+  "main": "index.js",
+  "scripts": {
+    "test": "run-local-lambda --file index.js --event tests/event.json",
+    "deploy": "aws lambda update-function-code --function-name arn:aws:lambda:ap-northeast-1:567403292509:function:healthtipsbot-AutoTweet --zip-file fileb://Lambda-Deployment.zip",
+    "predeploy": "zip -r Lambda-Deployment.zip * -x *.zip *.json *.log"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "twitter": "^1.7.1",
+    "util": "^0.11.1"
+  }
+}

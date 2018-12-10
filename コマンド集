@@ -1,0 +1,27 @@
+aws --version
+npm install aws-cli --save
+npm install --save aws-sdk（ラムダを使うならいらないっぽい？）
+npm install --save util（DynamoDBのアイテム総数カウントに使用した）
+https://qiita.com/tcsh/items/92125f5fa4b91dac3f89
+aws cliのプロファイルコンフィグ
+aws congigure
+そのリストをみる
+aws configure list
+
+
+
+https://docs.aws.amazon.com/ja_jp/amazondynamodb/latest/developerguide/SampleData.LoadData.html
+DynamoDBバルクインポート
+aws dynamodb batch-write-item --request-items file://tips.json
+
+アイテム総数カウントコマンド
+aws dynamodb scan --table-name tips --select COUNT
+
+
+
+
+デプロイ
+npm run deploy
+
+DyanamoDB情報
+aws dynamodb describe-table --table-name
